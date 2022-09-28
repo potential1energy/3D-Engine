@@ -3,15 +3,6 @@ varying vec3 vertexNormal;
 varying vec4 vertexColor;
 extern vec4 SunPos;
 
-struct Vert {
-	vec3 Pos;
-	vec2 Uv;
-	vec3 Vn;
-	vec4 Color;
-};
-
-Vert MeshVerts[1000000];
-
 float distance3D(float x, float y, float z)
 {
 	return sqrt((x * x) + ((y * y) + (z * z)));
@@ -42,5 +33,5 @@ vec4 effect(vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords)
 
 	vec4 C = Texel(texture, texture_coords);
 
-	return vec4(d, d, d, 1.0) * C;
+	return C;
 }

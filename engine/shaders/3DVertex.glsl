@@ -6,6 +6,7 @@ varying vec4 vposcam;
 uniform bool isCanvasEnabled;
 varying vec3 vertexNormal;
 varying vec4 vertexColor;
+extern vec4 ObjectTransform;
 
 attribute vec3 VertexNormal;
 
@@ -37,6 +38,7 @@ vec4 rotateVecY(vec4 position)
 
 vec4 position(mat4 transform, vec4 vertex_pos)
 {
+    vertex_pos += ObjectTransform;
 
     if (isCanvasEnabled) {
         vertex_pos.y *= -1.0;
