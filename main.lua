@@ -10,7 +10,7 @@ function love.load()
 
     --objects
 
-    e3d.objects.makeObject('earth', 'assets/sphere.obj', 'assets/earth.png')
+    e3d.objects.makeObject('earth', 'assets/sphere.obj', love.graphics.newImage('assets/earth.png'))
 
     --
     
